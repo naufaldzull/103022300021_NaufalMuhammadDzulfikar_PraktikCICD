@@ -28,6 +28,10 @@ jobs:
     env:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+    permissions: 
+      contents: write
+      packages: write
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -45,3 +49,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn -B sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=naufaldzull -Dsonar.projectKey=naufaldzull_103022300021_NaufalMuhammadDzulfikar_PraktikCICD
+
+    # Praktik Continous Deployment
+
+    - name: Continous deployment
+      run: mvn -B clean deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        
