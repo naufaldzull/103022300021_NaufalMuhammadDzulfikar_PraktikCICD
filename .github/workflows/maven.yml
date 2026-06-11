@@ -40,4 +40,4 @@ jobs:
     - name: Analisis sonarcloud
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn -B sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=naufaldzull -Dsonar.projectKey=naufaldzull_lat_mkepl
+      run: mvn -B sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=naufaldzull -Dsonar.projectKey=naufaldzull_103022300021_NaufalMuhammadDzulfikar_PraktikCICD
